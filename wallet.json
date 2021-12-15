@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "bff0539a-a22d-4e1b-810c-de3097a00e0a",
+		"name": "Proyecto4_Wallet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Lista Wallets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{wallet}}/wallet",
+					"protocol": "http",
+					"host": [
+						"{{wallet}}"
+					],
+					"path": [
+						"wallet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movimientos Wallet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{wallet_mov}}/mov-wallet",
+					"protocol": "http",
+					"host": [
+						"{{wallet_mov}}"
+					],
+					"path": [
+						"mov-wallet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movimientos Wallet Debit Card",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{wallet}}/wallet/card",
+					"protocol": "http",
+					"host": [
+						"{{wallet}}"
+					],
+					"path": [
+						"wallet",
+						"card"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Wallet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"document\": \"46440530\",\r\n    \"documentType\": \"DNI\",\r\n    \"telephone\": \"940404461\",\r\n    \"imei\": \"888888888888888888888888888888888888888888888\",\r\n    \"mail\": \"jonavcar@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{wallet}}/wallet",
+					"protocol": "http",
+					"host": [
+						"{{wallet}}"
+					],
+					"path": [
+						"wallet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Wallet DebitCard",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"telephone\": \"940328598\",\r\n    \"debitCard\": \"43987985749858495\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{wallet}}/wallet/card",
+					"protocol": "http",
+					"host": [
+						"{{wallet}}"
+					],
+					"path": [
+						"wallet",
+						"card"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sacar dinero",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product\": \"940404461\",\r\n    \"concept\": \"SACAR-DINERO\",\r\n    \"amount\": 2500\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{wallet_mov}}/mov-wallet",
+					"protocol": "http",
+					"host": [
+						"{{wallet_mov}}"
+					],
+					"path": [
+						"mov-wallet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Depositar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product\": \"940404461\",\r\n    \"concept\": \"PONER-DINERO\",\r\n    \"amount\": 2500\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{wallet_mov}}/mov-wallet",
+					"protocol": "http",
+					"host": [
+						"{{wallet_mov}}"
+					],
+					"path": [
+						"mov-wallet"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
